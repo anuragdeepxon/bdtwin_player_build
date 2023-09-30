@@ -65,7 +65,7 @@
             $.ajax({
                 url: apiUrl,
                 type: 'GET',
-                dataType: 'json',
+                 dataType: 'jsonp', 
                 success: function (data) {
                     if (data.success === 1) {
                         const $betfairTable = $('#cricket-table tbody'); // target the tbody of the table
@@ -97,7 +97,7 @@
             $.ajax({
                 url: apiUrl,
                 type: 'GET',
-                dataType: 'json',
+                 dataType: 'jsonp', 
                 success: function (data) {
                     if (data.success === 1) {
                         const $betfairTable = $('#football-table tbody'); // target the tbody of the table
@@ -131,7 +131,7 @@
             $.ajax({
                 url: apiUrl,
                 type: 'GET',
-                dataType: 'json',
+                 dataType: 'jsonp', 
                 success: function (apiResponse) {
                     if (apiResponse.success === 1) {
                         const $betfairTable = $('#tennis-table tbody'); // target the tbody of the table
@@ -167,7 +167,7 @@
             $.ajax({
                 url: apiUrl,
                 type: 'GET',
-                dataType: 'json',
+                 dataType: 'jsonp', 
                 success: function (apiResponse) {
                     if (apiResponse.success === 1) {
                         const $basketballTable = $('#basketball-table tbody'); // target the tbody of the table
