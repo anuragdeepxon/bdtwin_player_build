@@ -63,9 +63,9 @@
             const apiUrl = 'https://api.b365api.com/v1/betfair/ex/inplay?sport_id=4&token=171372-JhSYGqlXDJjAVe';
 
             $.ajax({
-                url: apiUrl,
+                url: proxyUrl + apiUrl,
                 type: 'GET',
-                 dataType: 'jsonp', 
+                dataType: 'json',
                 success: function (data) {
                     if (data.success === 1) {
                         const $betfairTable = $('#cricket-table tbody'); // target the tbody of the table
@@ -95,9 +95,9 @@
             const apiUrl = 'https://api.b365api.com/v1/betfair/ex/inplay?sport_id=1&token=171372-JhSYGqlXDJjAVe';
 
             $.ajax({
-                url: apiUrl,
+                url: proxyUrl + apiUrl,
                 type: 'GET',
-                 dataType: 'jsonp', 
+                dataType: 'json',
                 success: function (data) {
                     if (data.success === 1) {
                         const $betfairTable = $('#football-table tbody'); // target the tbody of the table
@@ -129,9 +129,9 @@
             const apiUrl = 'https://api.b365api.com/v1/bwin/inplay?token=171372-JhSYGqlXDJjAVe';
 
             $.ajax({
-                url: apiUrl,
+                url: proxyUrl + apiUrl,
                 type: 'GET',
-                 dataType: 'jsonp', 
+                dataType: 'json',
                 success: function (apiResponse) {
                     if (apiResponse.success === 1) {
                         const $betfairTable = $('#tennis-table tbody'); // target the tbody of the table
@@ -165,22 +165,22 @@
             const apiUrl = 'https://api.b365api.com/v1/betfair/sb/inplay?sport_id=1&token=171372-JhSYGqlXDJjAVe';
 
             $.ajax({
-                url: apiUrl,
+                url: proxyUrl + apiUrl,
                 type: 'GET',
-                 dataType: 'jsonp', 
+                dataType: 'json',
                 success: function (apiResponse) {
-                    if (apiResponse.success === 1) {
-                        const $basketballTable = $('#basketball-table tbody'); // target the tbody of the table
+            if (apiResponse.success === 1) {
+                const $basketballTable = $('#basketball-table tbody'); // target the tbody of the table
 
-                        apiResponse.results.forEach(result => {
-                            const rowData = `<tr>
+                apiResponse.results.forEach(result => {
+                    const rowData = `<tr>
                                       <td>${result.league.name}</td>
                                       <td>${result.home.name}</td>
                                       <td>${result.away.name}</td>
                                       <td>${new Date(result.time * 1000).toLocaleString()}</td>
                                     </tr>`;
-                            $basketballTable.append(rowData);
-                        });
+                    $basketballTable.append(rowData);
+                });
                     } else {
                         console.error('API call unsuccessful');
                     }
@@ -205,7 +205,7 @@
                             <img src="logo.svg" alt="Logo" style="height: 60px;" />
                         </div>
                     </div>
-
+                    
                     <div class="lang d-flex align-items-center px-2">
                         <div class="language__wrap">
                             <div class="flag">
@@ -726,7 +726,7 @@
                                                                 <div class="tab-pane fade text-white " id="nextfootball"
                                                                     role="tabpanel" tabindex="0">
                                                                     <div class="main__table main__table__nextfootball">
-
+                                     
                                                                         <div class="height__table">
                                                                             <div class="tab-content"
                                                                                 id="nav-tabContentheight">
@@ -772,7 +772,7 @@
                                                                 <div class="tab-pane fade text-white "
                                                                     id="nextgotennistab" role="tabpanel" tabindex="0">
                                                                     <div class="main__table main__table__nextfootball">
-
+                                           
                                                                         <div class="height__table">
                                                                             <div class="tab-content"
                                                                                 id="nav-tabContentheight">
@@ -786,7 +786,7 @@
                                                                                     <div class="main__table">
 
                                                                                         <div class="table__wrap">
-                                                                                            <table id="tennis-table"
+                                                                                            <table  id="tennis-table"
                                                                                                 class=" betfair-table table table-bordered ">
                                                                                                 <thead
                                                                                                     class="thead-dark">
@@ -824,7 +824,7 @@
                                                                 <div class="tab-pane fade text-white "
                                                                     id="nextbaskettab" role="tabpanel" tabindex="0">
                                                                     <div class="main__table main__table__nextfootball">
-
+                                             
 
                                                                         <div class="height__table">
                                                                             <div class="tab-content"
